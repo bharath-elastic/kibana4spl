@@ -1,0 +1,57 @@
+{
+  "order": 0,
+  "index_patterns": [
+    "weblogs",
+    "httplogs"
+  ],
+  "settings": {
+    "index": {
+      "number_of_shards": "1"
+    }
+  },
+  "mappings": {
+    "dynamic_templates": [
+      {
+        "strings": {
+          "mapping": {
+            "type": "keyword"
+          },
+          "match_mapping_type": "string"
+        }
+      }
+    ],
+    "properties": {
+      "agent": {
+        "type": "text"
+      },
+      "client.geo.location": {
+        "type": "geo_point"
+      },
+      "http.response.bytes": {
+        "type": "long"
+      },
+      "server.memory": {
+        "type": "long"
+      },
+      "server.ip": {
+        "type": "ip"
+      },
+      "machine.ram": {
+        "type": "long"
+      },
+      "server.phpmemory": {
+        "type": "long"
+      },
+      "client.ip": {
+        "type": "ip"
+      },
+      "http.response.status_code": {
+        "type": "keyword"
+      },
+      "user_agent.original": {
+        "type": "text"
+      }
+    }
+  },
+  "aliases": {}
+}
